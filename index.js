@@ -55,6 +55,13 @@ class Circle {
       //   perimeter = value;
       // },
     });
+
+    Object.defineProperty(this, "Area", {
+      set: function (value) {
+        if (!value || isNaN(value)) throw Error("Invalid val");
+        area = value;
+      },
+    });
   }
 }
 
