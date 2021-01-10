@@ -47,19 +47,40 @@ class Circle {
       console.log("Perimeter : ", perimeter);
     };
 
-    Object.defineProperty(this, "Perimeter", {
-      get: function () {
-        return perimeter;
-      },
-      // set: function (value) {
-      //   perimeter = value;
-      // },
-    });
+    // Object.defineProperty(this, "Perimeter", {
+    //   get: function () {
+    //     return perimeter;
+    //   },
+    //   // set: function (value) {
+    //   //   perimeter = value;
+    //   // },
+    // });
 
-    Object.defineProperty(this, "Area", {
-      set: function (value) {
-        if (!value || isNaN(value)) throw Error("Invalid val");
-        area = value;
+    // Object.defineProperty(this, "Area", {
+    //   set: function (value) {
+    //     if (!value || isNaN(value)) throw Error("Invalid val");
+    //     area = value;
+    //   },
+    // });
+
+    // define object Properties
+    Object.defineProperties(this, {
+      Area: {
+        set: function (value) {
+          if (!value || isNaN(value)) throw Error("Invalid val");
+          area = value;
+        },
+        get: function () {
+          return area;
+        },
+      },
+      Perimeter: {
+        get: function () {
+          return perimeter;
+        },
+        // set: function (value) {
+        //   perimeter = value;
+        // },
       },
     });
   }
@@ -67,6 +88,3 @@ class Circle {
 
 const anotherCircle = new Circle(3.6);
 anotherCircle.print();
-console.log(anotherCircle.Perimeter);
-
-anotherCircle.Perimeter = 45;
