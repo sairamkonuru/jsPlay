@@ -88,3 +88,29 @@ class Circle {
 
 const anotherCircle = new Circle(3.6);
 anotherCircle.print();
+
+//es 2019 implementation
+class MyClass {
+  // private property
+  #x = 9;
+  z = 2;
+
+  // private method (can only be called within the class)
+  #incX() {
+    this.#x++;
+  }
+
+  incrementX() {
+    this.#incX();
+  }
+
+  // private setter (can only be used within the class)
+  set #setX(x) {
+    this.#x = x;
+  }
+
+  // private getter (can only be used within the class)
+  get getX() {
+    return this.#x;
+  }
+}
